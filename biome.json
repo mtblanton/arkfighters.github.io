@@ -6,12 +6,20 @@
 		"useIgnoreFile": false
 	},
 	"files": {
+		"include": [
+			"src",
+			"biome.json",
+			"eleventy.config.js",
+			"package.json",
+			"tailwind.config.js"
+		],
 		"ignoreUnknown": false,
-		"ignore": []
+		"ignore": ["src/config/setup/create-colors.js"]
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "tab"
+		"indentStyle": "tab",
+		"formatWithErrors": true
 	},
 	"organizeImports": {
 		"enabled": true

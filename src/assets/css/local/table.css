@@ -1,49 +1,49 @@
 table {
-  border: 0;
-  inline-size: 100%;
+	border: 0;
+	inline-size: 100%;
 }
 
 table br {
-  display: none;
+	display: none;
 }
 
 thead {
-  border: none;
-  clip: rect(0 0 0 0);
-  block-size: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  inline-size: 1px;
+	border: none;
+	clip: rect(0 0 0 0);
+	block-size: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	inline-size: 1px;
 }
 
 tr {
-  border: var(--stroke);
-  display: block;
-  margin-block-end: var(--space-s);
+	border: var(--stroke);
+	display: block;
+	margin-block-end: var(--space-s);
 }
 
 th,
 td {
-  padding: var(--space-xs) var(--space-s);
-  vertical-align: sub;
+	padding: var(--space-xs) var(--space-s);
+	vertical-align: sub;
 }
 
 td {
-  border-block-end: var(--stroke);
-  display: block;
-  text-align: start;
+	border-block-end: var(--stroke);
+	display: block;
+	text-align: start;
 }
 
 td::before {
-  content: attr(data-label);
-  float: start;
-  font-weight: var(--font-bold);
+	content: attr(data-label);
+	float: start;
+	font-weight: var(--font-bold);
 }
 
 td:last-child {
-  border-block-end: 0;
+	border-block-end: 0;
 }
 
 @media screen(sm) {
