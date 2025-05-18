@@ -33,7 +33,7 @@ jobs:
         run: npm run build
         env:
           START_GG_API_KEY: ${{ secrets.START_GG_API_KEY }}
-          START_GG_API_URL: ${{ env.START_GG_API_URL }}
+          START_GG_API_URL: ${{ vars.START_GG_API_URL }}
 
       - name: Upload static files as artifact
         id: deployment
