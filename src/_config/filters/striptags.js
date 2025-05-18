@@ -1,3 +1,3 @@
-export const striptags = string => {
-  return string.replace(/<[^>]*>?/gm, '');
+export const striptags = (string) => {
+	return string.replace(/<[^>]*>?/gm, "");
 };

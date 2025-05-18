@@ -12,13 +12,13 @@ Can be any acceptable flexbox alignment value.
 */
 
 .repel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: var(--repel-vertical-alignment, center);
-  gap: var(--gutter, var(--space-s-l));
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: var(--repel-vertical-alignment, center);
+	gap: var(--gutter, var(--space-s-l));
 }
 
 .repel[data-nowrap] {
-  flex-wrap: nowrap;
+	flex-wrap: nowrap;
 }

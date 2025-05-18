@@ -7,20 +7,23 @@
  * @returns {String} - The attributes or empty.
  */
 export function getLinkActiveState(itemUrl, pageUrl) {
-  let response = '';
+	let response = "";
 
-  // Ensure pageUrl is a string before proceeding
-  if (typeof pageUrl === 'string') {
-    if (itemUrl === pageUrl) {
-      response = ' aria-current="page"';
-    }
+	// Ensure pageUrl is a string before proceeding
+	if (typeof pageUrl === "string") {
+		if (itemUrl === pageUrl) {
+			response = ' aria-current="page"';
+		}
 
-    if (itemUrl.length > 1 && pageUrl.startsWith(itemUrl.replace('/page-0/', ''))) {
-      response += ' data-state="active"';
-    }
-  }
+		if (
+			itemUrl.length > 1 &&
+			pageUrl.startsWith(itemUrl.replace("/page-0/", ""))
+		) {
+			response += ' data-state="active"';
+		}
+	}
 
-  return response;
+	return response;
 }
 
 /**
@@ -33,7 +36,7 @@ export function getLinkActiveState(itemUrl, pageUrl) {
  * @returns {Array} - Result collection or empty.
  */
 export function filterCollectionByKeys(collection, keys) {
-  return collection.filter(x => keys.includes(x.data.key));
+	return collection.filter((x) => keys.includes(x.data.key));
 }
 
 /**
@@ -42,8 +45,8 @@ export function filterCollectionByKeys(collection, keys) {
  * @returns {string} A random UUID.
  */
 export function random() {
-  const segment = () => {
-    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-  };
-  return `${segment()}-${segment()}-${segment()}`;
+	const segment = () => {
+		return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+	};
+	return `${segment()}-${segment()}-${segment()}`;
 }

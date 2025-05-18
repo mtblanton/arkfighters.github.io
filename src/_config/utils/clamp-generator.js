@@ -11,33 +11,33 @@
  * @returns {array} {name: string, value: string}
  */
 
-import viewports from '../../_data/designTokens/viewports.json';
+import viewports from "../../_data/designTokens/viewports.json";
 
-export const clampGenerator = tokens => {
-  const rootSize = 16;
+export const clampGenerator = (tokens) => {
+	const rootSize = 16;
 
-  return tokens.map(({name, min, max}) => {
-    if (min === max) {
-      return `${min / rootSize}rem`;
-    }
+	return tokens.map(({ name, min, max }) => {
+		if (min === max) {
+			return `${min / rootSize}rem`;
+		}
 
-    // Convert the min and max sizes to rems
-    const minSize = min / rootSize;
-    const maxSize = max / rootSize;
+		// Convert the min and max sizes to rems
+		const minSize = min / rootSize;
+		const maxSize = max / rootSize;
 
-    // Convert the pixel viewport sizes into rems
-    const minViewport = viewports.min / rootSize;
-    const maxViewport = viewports.max / rootSize;
+		// Convert the pixel viewport sizes into rems
+		const minViewport = viewports.min / rootSize;
+		const maxViewport = viewports.max / rootSize;
 
-    // Slope and intersection allow us to have a fluid value but also keep that sensible
-    const slope = (maxSize - minSize) / (maxViewport - minViewport);
-    const intersection = -1 * minViewport * slope + minSize;
+		// Slope and intersection allow us to have a fluid value but also keep that sensible
+		const slope = (maxSize - minSize) / (maxViewport - minViewport);
+		const intersection = -1 * minViewport * slope + minSize;
 
-    return {
-      name,
-      value: `clamp(${minSize}rem, ${intersection.toFixed(2)}rem + ${(slope * 100).toFixed(
-        2
-      )}vw, ${maxSize}rem)`
-    };
-  });
+		return {
+			name,
+			value: `clamp(${minSize}rem, ${intersection.toFixed(2)}rem + ${(
+				slope * 100
+			).toFixed(2)}vw, ${maxSize}rem)`,
+		};
+	});
 };

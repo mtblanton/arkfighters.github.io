@@ -10,15 +10,15 @@
  * @return {object} {key, value}
  */
 
-import slugify from 'slugify';
+import slugify from "slugify";
 
-export const tokensToTailwind = tokens => {
-  const nameSlug = text => slugify(text, {lower: true});
-  let response = {};
+export const tokensToTailwind = (tokens) => {
+	const nameSlug = (text) => slugify(text, { lower: true });
+	const response = {};
 
-  tokens.forEach(({name, value}) => {
-    response[nameSlug(name)] = value;
-  });
+	tokens.forEach(({ name, value }) => {
+		response[nameSlug(name)] = value;
+	});
 
-  return response;
+	return response;
 };
