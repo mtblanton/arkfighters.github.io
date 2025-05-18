@@ -6,15 +6,13 @@
 		"useIgnoreFile": false
 	},
 	"files": {
-		"include": [
-			"src",
-			"biome.json",
-			"eleventy.config.js",
-			"package.json",
-			"tailwind.config.js"
-		],
 		"ignoreUnknown": false,
-		"ignore": ["src/config/setup/create-colors.js"]
+		"ignore": [
+			"dist",
+			"src/_includes/css",
+			"src/_includes/scripts",
+			"src/_includes/components/**/custom-*.njk"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -27,7 +25,10 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"correctness": {
+				"noUnknownMediaFeatureName": "warn"
+			}
 		}
 	},
 	"javascript": {
