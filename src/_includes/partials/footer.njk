@@ -1,0 +1,37 @@
+<footer class="site-footer mt-l-xl p-s-m">
+  <div class="wrapper">
+    <div class="cluster gutter-xs">
+        {% for item in navigation.bottom %}
+          <a
+            href="{{ item.url }}"
+            {{
+              helpers.getLinkActiveState(item.url,
+              page.url)
+              |
+              safe
+            }}
+            >{{ item.text }}</a
+          >
+        {% endfor %}
+      </nav>
+
+      <nav class="cluster" aria-label="{{ meta.navigation.ariaPlatforms }}">
+        {% for key, value in personal.platforms %}
+          {% if value != "" %}
+            <!-- regular platforms -->
+            <a class="no-indicator" href="{{ value }}" rel="me">
+              <span class="visually-hidden">{{ key | capitalize }}</span>
+              {% svg 'platform/' + key %}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+
+    <aside class="creator | cluster gutter-2xs text-step-min-1 mt-xl">
+      Made with <a href="https://eleventy-excellent.netlify.app/">Eleventy Excellent</a> and
+      <a href="https://www.11ty.dev/">11ty</a> by
+      <a href="{{ meta.creator.website }}">{{ meta.creator.name }}</a>
+    </aside>
+  </div>
+</footer>
